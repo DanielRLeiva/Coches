@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #3490dc;
+}
+
+ul:not(.error) {
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFA3A3;
+    width: 300px;
+    border-radius: 15px;
+
+}
+
+ul li {
+    padding: 10px;
+}
+
+ul li a,
+ul ~ a,
+a, 
+button[type='submit'] {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #3490dc;
+    margin-top: 15px;
+}
+
+ul li a:hover,
+ul ~ a:hover,
+a:hover {
+    color: #2ecc71;
+    transform: scale(1.2);
+}
+
+input[type='submit']:hover {
+    background-color: #3490dc;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+
+label {
+    font-weight: bold;
+    text-align: center;
+} 
+
+div {
+    display: flex;
+    align-items: center;
+}
+
+h1 ~ p {
+    color : #2ecc71;
+}
+
+p > b {
+    color: #FFA3A3;
+}
