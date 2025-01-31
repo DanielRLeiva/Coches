@@ -15,7 +15,7 @@
             <li>{{ $error }}</li>
         @endforeach
     </ul>
-    <form method="POST" action="{{ route('guardarcoche') }}">
+    <form class="create" method="POST" action="{{ route('guardarcoche') }}">
         @csrf
         <div>
             <label for="marca">Marca:</label>
@@ -30,11 +30,14 @@
         <div>
             <label for="modelo">Modelo:</label>
             <textarea type="text" name="modelo" placeholder="Modelo del Coche"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Guardar">
         </div> 
-        <input type="submit" value="Guardar">
-        <br>
+        <div>
+            <a href="{{ route('listacoches') }}">Ir a coches</a>
+        </div>
     </form>
-    <a href="{{ route('listacoches') }}">Ir a coches</a>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
             <li>{{ $error }}</li>
         @endforeach
     </ul>
-    <form method="POST" action="{{ route('actualizarcoche', $coche->id) }}">
+    <form class="edit" method="POST" action="{{ route('actualizarcoche', $coche->id) }}">
         @csrf
         @method('PUT')
 
@@ -32,10 +32,13 @@
             <label for="modelo">Modelo:</label>
             <textarea type="text" name="modelo" id="modelo">{{ old('modelo', $coche->modelo) }}</textarea>
         </div>
-        <input type="submit" value="Actualizar Coche">
-
+        <div>
+            <input type="submit" value="Actualizar Coche">
+        </div>
+        <div>
+            <a href="{{ route('listacoches') }}">Ir a coches</a>
+        </div>
     </form>
-    <a href="{{ route('listacoches') }}">Ir a coches</a>
 </body>
 
 </html>
