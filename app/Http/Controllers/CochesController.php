@@ -12,16 +12,28 @@ class CochesController extends Controller
      */
     public function index(Request $request)
     {
+
+        $precio = $request->input('precio');
+        $anio = $request->input('anio');
+        
         $query = Coche::query();
 
         if ($request->has('marca')) {
             $query->where('marca', 'like', "%{$request->marca}%");
+        }
+
+        if ($anio) {
+            $query->anioMayorQue($anio);
+        }
+
+        if ($precio) {
+            $query->precioMenorQue($precio);
+        }
+
+        $coches = $query->get();
+        return view('coches', compact('coches'));
     }
 
-    $coches = $query->get();
-    return view('coches', compact('coches'));
-}
-    
 
     /**
      * Show the form for creating a new resource.
@@ -39,6 +51,8 @@ class CochesController extends Controller
         $request->validate([
             'marca' => 'required',
             'modelo' => 'required',
+            'anio' => 'required|numeric',
+            'precio' => 'required|numeric',
         ]);
         Coche::create($request->all());
         return redirect()->route('listacoches')->with('success', 'Coche creado con éxito');
@@ -68,10 +82,12 @@ class CochesController extends Controller
     public function update(Request $request, string $id)
     {
         $coche = Coche::findOrFail($id);
-        
+
         $request->validate([
             'marca' => 'required',
             'modelo' => 'required',
+            'anio' => 'required|numeric',
+            'precio' => 'required|numeric',
         ]);
         $coche->update($request->all());
         return redirect()->route('listacoches')->with('success', 'Coche actualizado');

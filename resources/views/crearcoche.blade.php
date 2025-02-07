@@ -30,10 +30,22 @@
         <div>
             <label for="modelo">Modelo:</label>
             <textarea type="text" name="modelo" placeholder="Modelo del Coche"></textarea>
+        </div>        
+
+        <div>
+            <label for="anio">Año:</label>
+            <input type="number" name="anio" value="{{ old('anio') }}" placeholder="Año del Coche">
         </div>
+
+        <div>
+            <label for="precio">Precio:</label>
+            <input type="number" name="precio" value="{{ old('precio') }}" placeholder="Preciod del Coche">
+        </div>
+
         <div>
             <input type="submit" value="Guardar">
         </div> 
+
         <div>
             <a href="{{ route('listacoches') }}">Ir a coches</a>
         </div>
