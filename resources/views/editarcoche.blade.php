@@ -36,12 +36,12 @@
 
         <div>
             <label for="anio">Año:</label>
-            <input type="number" name="anio" value="{{ old('anio') }}" placeholder="Año del Coche">
+            <input type="number" name="anio" value="{{ old('anio', $coche->anio) }}" placeholder="Año del Coche">
         </div>
 
         <div>
             <label for="precio">Precio:</label>
-            <input type="number" name="precio" value="{{ old('precio') }}" placeholder="Preciod del Coche">
+            <input type="number" name="precio" value="{{ old('precio', $coche->precio) }}" placeholder="Preciod del Coche">
         </div>
 
         <div>
