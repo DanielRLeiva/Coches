@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('coches', function (Blueprint $table) {
+        Schema::create('concesionarios', function (Blueprint $table) {
             $table->id();
-            $table->string('marca');
-            $table->string('modelo');
-            $table->foreignId('concesionario_id')->references('id')->on('concesionarios');
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('coches');
+        Schema::dropIfExists('concesionarios');
     }
 };

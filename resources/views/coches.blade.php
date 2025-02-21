@@ -18,7 +18,7 @@
         </div>
 
         <div>
-            <label for="marca">Filtrado por año superiore a:</label>
+            <label for="marca">Filtrado por año máximo:</label>
             <input type="text" name="anio" placeholder="Filtrar por año">
         </div>
 
